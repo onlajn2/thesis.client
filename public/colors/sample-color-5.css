@@ -1,0 +1,268 @@
+/*
+    MAIN-COLOR:     #9c28b0
+    DARKER:         #802191
+    DARK-2_LIGHT:   #8f2191
+*/
+/* *************************************** COLORS ******************************************** */
+/* #0385db */
+#content-articles .main-block h1 a:hover,
+#help-block .help-inner .help-bottom h3,
+#manual-cont-block #sample-html b {
+  color: #802191;
+}
+/* #0398db */
+.header-list-ul > li.visibled > a,
+.header-list-ul > li:hover > a,
+#content-articles .content-tools > ul > li:hover,
+#content-articles .content-tools > ul > li.active,
+.bottom-block a,
+.bottom-block h4,
+.article-full h1 a,
+.similar-title,
+.article-full h1 a,
+#help-block .help-inner .help-top h2.help-tit {
+  color: #8f2191;
+}
+/* #03a9f4 */
+.header-submenu-grid .column-title > a,
+#submenu-favorite > a.whole:hover,
+.header-submenu-grid .column .column-row > li > a:hover,
+.article-classic .top-info .journal-link,
+.content-info .content-link,
+.header-logo-icon,
+.header-submenu-grid.submenu-3 .long-link,
+.header-submenu-grid.submenu-3 .column-title,
+.content-tools .show-btn a#showing,
+#content-articles .main-block h1 a,
+.parse-block h1,
+#manual-cont-block h3 {
+  color: #9c28b0;
+}
+.header-icons input,
+.toolbar-admin .toserver,
+.sample-color-select,
+.header-logo-text,
+.header-list-ul > li > a,
+#side-toolbar,
+.center-button button,
+.article-full .wid a,
+.toolbar-display ul li::after,
+.dis-blc button,
+#help::after,
+.article-full .wid a,
+.bottom-name button,
+.parse-block > form.parse button,
+#manual-cont-block form.parse > button,
+#manual-cont-block #manual-form .last-row button,
+#manual-cont-block #sample-html .slc b {
+  color: #ffffff;
+}
+.header-icons input::-webkit-input-placeholder,
+.header-icons input::-moz-placeholder,
+.header-icons input:-ms-input-placeholder,
+.header-icons input:-moz-placeholder {
+  color: #eeeeee;
+}
+.content-info .count-articles,
+.long-none,
+#help-block .help-inner .help-top,
+.parse-block > form.parse select:focus,
+#manual-cont-block form.parse button.element,
+#manual-cont-block #manual-form button.element {
+  color: #222222;
+}
+.parse-block > form.parse select {
+  color: #555555;
+}
+#submenu-favorite > a.whole,
+.header-submenu-grid .column .column-row > li > a,
+.toolbar-display ul li.disabled {
+  color: #888888;
+}
+.article-classic h4 a {
+  color: #212121;
+}
+/* *************************************** BACKGROUND-COLOR ******************************************** */
+body {
+  background-color: #f5f5f5;
+}
+#header,
+#side-toolbar,
+.header-icons input,
+.toolbar-admin .toserver,
+.center-button button,
+.article-full .wid a,
+#scroll-button,
+.info-note:hover,
+.dis-blc button,
+#help,
+.article-full .wid a,
+.bottom-name button,
+.parse-block > form.parse button,
+#manual-cont-block form.parse > button,
+#manual-cont-block #manual-form .last-row button {
+  background-color: #9c28b0;
+}
+.toolbar-admin .toserver:hover,
+.side-toolbar-top,
+.header-icon:hover,
+.center-button button:hover,
+.article-full .wid a:hover,
+#scroll-button:hover,
+.toolbar-display ul li::after,
+.dis-blc button:hover,
+#help-block .help-inner .help-top .help-cls,
+.article-full .wid a:hover,
+.bottom-name button:hover,
+.parse-block > form.parse button:hover,
+#manual-cont-block form.parse > button:hover,
+#manual-cont-block #manual-form .last-row button:hover {
+  background-color: #8f2191;
+}
+#help:hover,
+#help-block .help-inner .help-top .help-cls:hover {
+  background-color: #802191;
+}
+.header-logo-icon,
+.header-list-ul > li.visibled,
+.header-submenu,
+.article-classic,
+#content-articles .content-tools > .content-tools-left,
+.content-info,
+.article-full,
+.bottom-block,
+.own-columns li .cls-own,
+.parse-block > form.parse,
+.bottom-name,
+#manual-cont-block form.parse,
+#manual-cont-block #manual-form,
+#manual-cont-block #sample-html {
+  background-color: #ffffff;
+}
+.header-submenu-grid .column .column-row > li:hover,
+#submenu-favorite a.whole:hover,
+.header-submenu-grid.submenu-3 .long-link:hover,
+.own-columns li:hover .cls-own,
+.parse-block > form.parse select:focus,
+#manual-cont-block form.parse button.element,
+#manual-cont-block #manual-form button.element,
+#manual-cont-block form.parse select:focus {
+  background-color: #eeeeee;
+}
+#help-block .help-inner .help-bottom code {
+  background-color: #dddddd;
+}
+#help-block .help-inner {
+  background-color: #fdfdfd;
+}
+#help-block {
+  background-color: rgba(0, 0, 0, 0.46);
+}
+.toolbar-display ul li.disabled::after {
+  background-color: #c90e11;
+}
+.toolbar-display ul li:hover {
+  background-color: #282828;
+}
+span.slc {
+  background-color: #0aa89e !important;
+}
+
+/* *************************************** BORDER ******************************************** */
+.header-submenu-grid.submenu-3 .long-link,
+.header-submenu-grid.submenu-3 .column-title,
+.parse-block > form.parse input,
+.parse-block > form.parse select,
+.bottom-name input,
+#manual-cont-block form.parse .row input,
+#manual-cont-block #manual-form .row input,
+#manual-cont-block form.parse select {
+  border-bottom: solid thin #eeeeee;
+}
+.parse-block > form.parse input:focus,
+.bottom-name input:focus,
+#manual-cont-block form.parse .row input:focus,
+#manual-cont-block #manual-form .row input:focus {
+  border-bottom: solid thin #9c28b0;
+}
+#help-block .help-inner .help-top {
+  border-bottom: solid thin #8f2191;
+}
+#content-articles .content-tools > ul > li:hover,
+#content-articles .content-tools > ul > li.active {
+  border-bottom: solid 2px #8f2191;
+}
+/* OTHER BORDER */
+.info-note {
+  border: solid thin #9c28b0;
+}
+.header-submenu-grid .column,
+.header-submenu-grid .long-column {
+  border-right: solid thin #eeeeee;
+}
+.lds-dual-ring-2:after,
+.lds-dual-ring:after {
+  border: 5px solid #9c28b0;
+  border-color: #9c28b0 transparent #9c28b0 transparent;
+}
+.own-columns li .cls-own {
+  border-left: solid thin #eeeeee;
+}
+.toolbar-display ul {
+  border-top: solid thin #333;
+}
+.toolbar-display ul li {
+  border-bottom: solid thin #333;
+  border-right: solid thin #333;
+}
+.header-icons input {
+  border-bottom-color: #eeeeee;
+}
+.header-list-ul > li.active {
+  border-bottom-color: #ffffff;
+}
+/* *************************************** SPECIAL ******************************************** */
+@media screen and (max-width: 767px) {
+  .submenu-3 .long-column:last-child {
+    border-top: solid thin #eeeeee;
+  }
+}
+#side-toolbar::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+#side-toolbar::-webkit-scrollbar-thumb {
+  background: #802191;
+}
+.side-toolbar-content.long-cont.visibled::-webkit-scrollbar-track,
+#side-toolbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.side-toolbar-content.long-cont.visibled::-webkit-scrollbar-thumb {
+  background: #111;
+}
+.side-toolbar-content.long-cont.visibled::-webkit-scrollbar-thumb:hover {
+  background: #111;
+}
+.header-logo-icon {
+  text-shadow: 1px 1px 0 rgba(156, 40, 176, 0.04), 1px 2px 0 rgba(156, 40, 176, 0.04), 1px 3px 0 rgba(156, 40, 176, 0.04), 2px 4px 0 rgba(156, 40, 176, 0.04), 3px 5px 0 rgba(156, 40, 176, 0.04), 4px 6px 0 rgba(156, 40, 176, 0.04), 5px 7px 0 rgba(156, 40, 176, 0.04), 6px 8px 0 rgba(156, 40, 176, 0.04), 7px 9px 0 rgba(156, 40, 176, 0.04), 8px 10px 0 rgba(156, 40, 176, 0.04), 9px 11px 0 rgba(156, 40, 176, 0.04), 10px 12px 0 rgba(156, 40, 176, 0.04), 11px 13px 0 rgba(156, 40, 176, 0.04), 12px 14px 0 rgba(156, 40, 176, 0.04), 13px 15px 0 rgba(156, 40, 176, 0.04), 14px 16px 0 rgba(156, 40, 176, 0.04), 15px 17px 0 rgba(156, 40, 176, 0.04), 16px 18px 0 rgba(156, 40, 176, 0.04), 17px 19px 0 rgba(156, 40, 176, 0.04), 18px 20px 0 rgba(156, 40, 176, 0.04), 19px 21px 0 rgba(156, 40, 176, 0.04), 20px 22px 0 rgba(156, 40, 176, 0.04), 21px 23px 0 rgba(156, 40, 176, 0.04);
+  }
+.side-toolbar-content {
+  background-color: #212121;
+  -webkit-box-shadow: inset 0 0 7px #000000;
+  -moz-box-shadow: inset 0 0 7px #000000;
+  box-shadow: inset 0 0 7px #000000;
+}
+.header-list-ul > li:after {
+  background: #ffffff;
+}
+.header-list-ul > li {
+  background-image: linear-gradient(to bottom, transparent 50%, #ffffff 50%);
+}
+
+select, .element {
+  border: none;
+}
+
+#header-search-field::placeholder {
+  color: #eeeeee;
+}

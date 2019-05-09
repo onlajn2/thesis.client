@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+html(lang="cs")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title MikroNews
+
+        link(rel="stylesheet", href="/public/styles/style.css")
+        link(rel="shortcut icon", href="/public/icons/favicon.ico", type="image/x-icon")
+        script(src="/public/scripts/script.js")
+
+    body
+        header#header
+            .header-inner
+                .header-top
+                    a.header-logo(href="/")
+                        span.header-logo-icon M
+                        span.header-logo-text Mikro
+                            span News
+                    .header-icons
+                        span.header-icon.header-icon-searc
+                        input#header-search-field(type="text", placeholder="Vyhledávání...", autocomplete="off", spellcheck="false")
+                        span.header-icon.header-icon-setti(title="Výběr barev")
+                        span.header-icon.header-icon-notif(title="Notifikace")
+                        span.header-icon.header-icon-admin(title="Administrace")
+
+                .header-list
+                    ul.header-list-ul
+                        li
+                            a(href="/") Domů
+                        
+                        li
+                            a Deníky
+                            .header-submenu
+                                .header-submenu-inner
+                                    #grid-tap.header-submenu-grid.submenu-5
+                                        - for (var i = 0; i < gClient.length; i++)
+                                            if gClient[i].journals.length !== 0
+                                                .empt
+                                                    h3.column-title: a(href= homePage + "kategorie/" + gClient[i].category.ur)= gClient[i].category.cz
+                                                    ul.column-row
+                                                        - for (var j = 0; j < gClient[i].journals.length; j++)
+                                                            li
+                                                                a(href= homePage + "denik/" + gClient[i].journals[j].name)
+                                                                    img(src="https://www.google.com/s2/favicons?domain=" + gClient[i].journals[j].link, alt="icon-" + gClient[i].journals[j].name)
+                                                                    = gClient[i].journals[j].name
+                                                        -
+                                        -
+                        li
+                            a Vlastní
+                            .header-submenu
+                                .header-submenu-inner
+                                    .header-submenu-grid.submenu-3
+                                        a.long-link(href= homePage + "pridat") Přidat nebo upravit deník
+                                        .long-column
+                                            h3.column-title Automatické deníky
+                                            span.long-none Žádné vlastní články...
+                                            
+                                        .long-column
+                                            h3.column-title Manuální deníky
+                                            span.long-none Žádné vlastní články...
+                                            
+                        li
+                            a Oblíbené
+                            .header-submenu
+                                .header-submenu-inner
+                                    .header-submenu-grid.submenu-5#submenu-favorite
+
+        #side-toolbar
+            .side-toolbar-top
+                span.side-toolbar-top-logo
+                h3 Nástroje
+                span.side-toolbar-close
+
+            .side-toolbar-row.toolbar-notification
+                .sidebar-row-top
+                    span.side-toolbar-top-logo
+                    h3 Notifikace
+                    span.toolbar-click.side-toolbar-open
+                .side-toolbar-content
+
+            .side-toolbar-row.toolbar-colors
+                .sidebar-row-top
+                    span.side-toolbar-top-logo
+                    h3 Výběr barev
+                    span.toolbar-click.side-toolbar-open
+                .side-toolbar-content
+                    .side-content-colors
+                        - for (var x = 1; x < 21; x++)
+                            span(class='sample-color sample-color-' + x)
+                        -
+
+            .side-toolbar-row.toolbar-admin
+                .sidebar-row-top
+                    span.side-toolbar-top-logo
+                    h3 Administrace
+                    span.toolbar-click.side-toolbar-open
+                .side-toolbar-content.short-cont
+                    a.toserver(href="" + addr, title="Server") Přejít na administraci
+            
+            .side-toolbar-row.toolbar-display
+                .sidebar-row-top
+                    span.side-toolbar-top-logo
+                    h3 Zobrazení
+                    span.toolbar-click.side-toolbar-open
+                .side-toolbar-content.long-cont
+                    span.inff Zobrazení kategorií na hlavní stránce
+                    ul#selector
+                        - for (var x = 0; x < gClient.length; x++)
+                            li= gClient[x].category.cz
+        
+        #content
+            block page-content

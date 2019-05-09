@@ -1,0 +1,200 @@
+extends _layout.pug
+
+block page-content
+    #content-top-arts
+        #content-articles
+            .content-tools
+                ul.content-tools-left
+                    li.active Automatické
+                    li Manuální
+                    li Upravit
+                
+                .content-info
+
+                #help(title="Nápověda")
+
+            div.parse-block#parse-auto-block
+                h1 Automatické vložení deníku
+
+                form.parse.parse-auto-link
+                    input#auto-url(type="url" autocomplete="off", placeholder="https://stranka.cz/clanky", spellcheck="false", required)
+                    select#auto-coding
+                        option(value="utf8") UTF-8
+                        option(value="win1250") Windows 1250
+                        option(value="win1251") Windows 1251
+                        option(value="win1252") Windows 1252
+                    button#auto-submit.disabled(type="submit") Zadat
+
+                #parse-auto-sample
+
+            div.parse-block#parse-manu-block
+                h1 Manuální vložení deníku
+
+                form.parse.parse-manu-link
+                    input#manu-url(type="url" autocomplete="off", placeholder="https://stranka.cz/clanky", spellcheck="false", required)
+                    select#manu-coding
+                        option(value="utf8") UTF-8
+                        option(value="win1250") Windows 1250
+                        option(value="win1251") Windows 1251
+                        option(value="win1252") Windows 1252
+                    button#manu-submit.disabled(type="submit") Zadat
+
+                #manual-cont-block
+                    div
+                        div
+                            h3 HTML pomocník
+                            form.parse.parse-selected
+                                .row
+                                    button.element Element
+                                    select#sample-type
+                                        option(value="0") Obálka
+                                        option(value="1") Nadpis
+                                        option(value="2") Text
+                                        option(value="3") Datum
+                                        option(value="4") Obrázek
+                                        option(value="5") Odkaz
+                                
+                                .inner-row
+                                    .row
+                                        button.element Selektor
+                                        input#sample-select(type="text", autocomplete="off", spellcheck="false", readonly, required)
+                                    
+                                    .row
+                                        button.element Atribut
+                                        select#sample-attrs
+                                            option(selected) atribut
+
+                                button#manu-select-submit.disabled(type="submit") Zadat
+
+                        div
+                            h3 Zdrojový kód
+                            #sample-html Obsah
+                          
+                    div
+                        div
+                            h3 Elementy
+                            #manual-form
+                                .row
+                                    button.element Obálka
+                                    input#i1(type="text", placeholder="selektor", autocomplete="off", spellcheck="false", required)
+                                .row
+                                    button.element Nadpis
+                                    input#i2(type="text", placeholder="selektor", autocomplete="off", spellcheck="false", required)
+                                    input#i222(type="text", placeholder="atribut", autocomplete="off", spellcheck="false")
+                                .row
+                                    button.element Text
+                                    input#i3(type="text", placeholder="selektor", autocomplete="off", spellcheck="false")
+                                    input#i333(type="text", placeholder="atribut", autocomplete="off", spellcheck="false")
+                                .row
+                                    button.element Datum
+                                    input#i4(type="text", placeholder="selektor", autocomplete="off", spellcheck="false")
+                                    input#i444(type="text", placeholder="atribut", autocomplete="off", spellcheck="false")
+                                .row
+                                    button.element Obrázek
+                                    input#i5(type="text", placeholder="selektor", autocomplete="off", spellcheck="false")
+                                    input#i555(type="text", placeholder="atribut", autocomplete="off", spellcheck="false")
+                                .row
+                                    button.element Odkaz
+                                    input#i6(type="text", placeholder="selektor", autocomplete="off", spellcheck="false")
+                                    input#i666(type="text", placeholder="atribut", autocomplete="off", spellcheck="false")
+                                .last-row
+                                    button.btnm.test#get-manual Vyzkoušet
+
+                        div
+                            h3 Ukázka
+                            #parse-manu-sample
+                        
+            div.parse-block#parse-edit-block
+                h1 Upravit existující deník
+
+                form.parse.parse-edit-link
+                    select#edit-jrn
+                    button#edit-submit.disabled(type="submit") Upravit
+
+                form.parse.parse-edit-link-2
+                    input#edit-url(type="url" autocomplete="off", placeholder="https://stranka.cz/clanky", spellcheck="false", required)
+                    select#edit-coding
+                        option(value="utf8") UTF-8
+                        option(value="win1250") Windows 1250
+                        option(value="win1251") Windows 1251
+                        option(value="win1252") Windows 1252
+                    button#edit-submit-2.disabled(type="submit") Potvrdit
+    #help-block
+        .help-inner
+            .help-top
+                h2.help-tit Nápověda
+                span.help-cls(title="Zavřít")
+            .help-bottom
+                h3 Přidávání deníků
+                p Přidávání deníků slouží pouze pro přidávání ukázek článků (bez obsahu). Slouží tedy spíše jako sběrač odkazů.
+                p Články jsou získávány pouze z jedné konkrétní články (bez stránkování).
+                p.last Můžete si zde přidat libovolné deníky. 
+
+                h3 Automatické přidávání deníků
+                p Slouží pro přidání deníků pouze ze zadání URL adresy. Jedná se o automatický systém, takže <b>nemusí dávat přesné výsledky</b>.
+                p V této metodě se nehledá <b>datum</b> článku.
+                p.last Pro přesnější hledání použijte <b>Manuální přidávání deníku</b>.
+
+                h3 Manuální přidávání deníků
+                p Oproti <b>Automatickému přidávání deníku</b> dosahuje tato metoda přesnějších výsledků včetně přidání <b>datumu</b> článku.
+                ol
+                    li Nejprve je potřeba zadat URL adresu webu, na kterém se nachází články (výpis článků)
+                    li Pokud je webová adresa platná, bude stáhnut její zdrojový kód (bez vygenerovaného JavaScriptu!!!)
+                    li Dále se zadávají <strong>selektory</strong>, které hledají hodnoty ve zdrojovém kódu.
+
+                h4 Selektory
+                p Selektory běží na bázi JavaScriptové knihovny <b>jQuery</b>.
+                p Selektor se skládá (může se skládat) ze 3 částí - HTML <b>značka</b>, atribut <b>ID</b> a atribut <b>CLASS</b> a případně z volitelného atributu.
+
+                ol
+                    li HTML značka (<b>tag</b>) - povinná část selektoru, je na prvním místě, hodnota se hledá uvnitř této značky, např.: <b>div</b>, <b>a</b>, <b>img</b>,...
+                    li Atribut <b>ID</b> - nepovinná část selektoru, unikátní identifikátor HTML tagu, přidává se za HTML značku se spojovacím znakem <b>#</b>
+                    li Atribut <b>CLASS</b> - nepovinná část selektoru, zpřesňuje hledání HTML značky, přidává se za HTML značku se spojovacím znakem <b>.</b>
+
+                p.last Výše uvedené části se spojují a tvoří tzv. <b>selektor</b>.
+
+                h4 Příklady:
+                <code>
+                    | &lt;div class="block side" id="first"&gt;<br>
+                    | &lt;/div&gt;
+                </code>
+                p.last Výsledný selektor: <b>div#first.block.side</b> nebo <b>div#first.side</b> nebo <b>div#first</b> nebo <b>div</b> atd.
+
+                <code>
+                    | &lt;a class="art-link" href="https://stranka.com"&gt;&lt;/a&gt;
+                </code>
+                p.last Výsledný selektor: <b>a</b> nebo <b>a.art-link</b>
+
+                h4 Atributy
+                p Spolu se selektory se zadává i atribut, kde hledat potřebnou hodnotu.
+                p Jedná se klasický HTML atribut, či jeden speciální atribut.
+
+                ol
+                    li Speciální atribut <b>TEXT</b> - jedná se o speciální atribut pro tohle parsování. Pokud je zadán tento atribut, tak bude brán text uvnitř selektoru.
+                    li Obyčejný atribut - atribut obsažen v selektoru (HTML značce), např.: <b>src</b>, <b>href</b>, <b>data-src</b>,...
+                p.last Atribut není povinný (existují výchozí hodnoty)
+
+                h4 Ukázkový příklad:
+                <code>
+                    | &lt;a class="art-link" href="https://stranka.com"&gt;Stránka&lt;/a&gt;
+                </code>
+                p - Pokud hledáte URL adresu: <i>selektor</i>: <b>a.art-link</b>, <i>atribut</i>: <b>href</b> <i>-&gt; výsledek</i>: <b>https://stranka.com</b> 
+                p.last - Pokud hledáte název odkazu: <i>selektor</i>: <b>a.art-link</b>, <i>atribut</i>: <b>text</b> <i>-&gt; výsledek</i>: <b>Stránka</b> 
+
+                h4 Hledané hodnoty:
+                ol
+                    li <b>Obálka</b>: povinný selektor, bez atributu, následující hodnoty budou hledány uvnitř tohoto selektoru
+                    li <b>Nadpis</b>: povinný selektor, výchozí atribut je <b>text</b>, nadpis článku
+                    li <b>Text</b>: nepovinný selektor, výchozí atribut je <b>text</b>, úvodní text článku
+                    li <b>Datum</b>: nepovinný selektor, výchozí atribut je <b>text</b>, datum článku (pouze informativní)
+                    li <b>Obrázek</b>: nepovinný selektor, výchozí atribut je <b>src</b>, odkaz na úvodní obrázek článku
+                    li <b>Odkaz</b>: nepovinný selektor, výchozí atribut je <b>href</b>, odkaz na celý článek
+                
+                p Parsováním nelze získat všechny informace (obsah čánku, doba čtení) jako u deníků na stránce. Jedná se pouze o sběrač odkazů.
+
+                h4 HTML pomocník
+                p HTML pomocník pracuje společně se zdrojovým kódem. Najetím na element ve zdrojovém kódu, bude tento element označen.
+                p Kliknutím na tento element, se získají hodnoty elementu a vyplní se HTML pomocník.
+                p Jakmile je vyplněný HTML pomocník, stačí si vybrat, která atributy a který typ elementu chcete vyplnit. Kliknutím na Zadat se přesunou hodnoty z HTML pomocníku do formuláře selektorů (elementů).
+                
+    script(src="/public/plugins/_add.js")
